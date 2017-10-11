@@ -1,0 +1,12 @@
+body {
+    color: #131313;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 300px) {
+    .boff-nav-links {
+    }
+}

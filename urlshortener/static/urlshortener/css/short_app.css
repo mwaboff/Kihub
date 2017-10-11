@@ -1,0 +1,102 @@
+body {
+    color: #EFEFEF;
+    background-color: #001547;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content-container {
+    padding-top: 0px;
+}
+
+#response_alert {
+    position: fixed;
+    margin-top: 57px;
+    width: 100%;
+    text-align: center;
+    visibility: hidden;
+    transition: visibility 2s;
+}
+
+.short_input {
+    width: 100%;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 10px;
+    border: 0px;
+    background-color: #EEE;
+    text-align: center;
+}
+
+#short_url {
+    height: 50px;
+    font-size: 25px;
+    box-sizing: border-box;
+}
+
+#long_url {
+    height: 75px;
+    font-size: 35px;
+    box-sizing: border-box;
+}
+
+.short_input:hover {
+    background-color: #fff2ea;
+}
+
+#short_form {
+    max-width: 95%;
+}
+
+#short_submit {
+    display: none;
+}
+
+.short_highlight_text {
+    font-weight: bold;
+    color: #131313;
+}
+
+#title {
+    font-size: 60px;
+    transition: 0.5s;
+    display: inline-block;
+    margin-bottom: 11px;
+}
+
+#title-extension {
+    font-size: 60px;
+    display: inline-block;
+    transition: 0.5s;
+    opacity: 0;
+    margin-bottom: 11px;
+}
+
+/* Custom Responsive-ness */
+
+@media only screen and (max-width: 620px) {
+    #title {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    body {
+        font-size: 16px;
+    }
+    #short_url {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    #long_url {
+        font-size: 30px;
+        width: 100%;
+    }
+
+    #title {
+        font-size: 30px;
+    }
+}

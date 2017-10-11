@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'input';
+  src: url('../fonts/Input-Regular.ttf') format('truetype');
+  src: local('../fonts/Input-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bariol';
+    src: url('../fonts/Bariol.ttf') format('truetype');
+    src: local('../fonts/Bariol.ttf') format('truetype'), url('../fonts/Bariol.woff') format('woff'), url('../fonts/Bariol.ttf') format('truetype'), url('../fonts/Bariol.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Bariol' !important;
+    font-size: 22px;
+}
+
+html {
+    height: 100%;
+    background-color: white;
+}
+
+input {
+    font-family: 'Bariol' !important;
+}
+
+.boff-nav {
+    position: fixed;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 4242; 
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#logo {
+    font-family: bariol;
+    font-weight: 300;
+    font-size: 18px;
+    display: flex;
+    color: #E3E3E3;
+
+    transition: color 0.5s;
+}
+
+#logo:hover {
+    color: red !important;
+    text-decoration: none;
+}
+
+
+
+.boff-nav-links {
+    font-family: bariol;
+    font-weight: 100;
+    font-size: 18px;
+    color: #E3E3E3;
+    display: flex;
+}
+
+.boff-link {
+    color: #E3E3E3;
+    transition: color 0.5s;
+}
+
+.boff-link:hover {
+    color: #FB644F !important;
+    text-decoration: none;
+}
+
+.boff-link:not(:first-child) {
+    margin-left: 20px;
+}
+
+
+
+.navbar {
+    padding: 0 0;
+    background: #282425;
+}
+
+.content-container {
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 0;
+    height: 100%;
+
+}
+
+.content {
+    max-width: 730px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}

@@ -1,0 +1,46 @@
+<div class='section fp-auto-height section-portfolio' data-anchor="portfolio">
+    <div class='portfolio-container'>
+
+
+        {% for project in projects %}
+        <div class='portfolio row justify-content-center'>
+
+            <div class='project-short-info row justify-content-center'>
+                <div class='project-img col-md-3 col-sm-2'>
+                    <img class='mx-auto d-block' src='{{ project.img_link }}' />
+                </div>
+                <div class='col-md-1 col-sm-1'></div>
+
+                <div class='project col-md-5 col-sm-5' id='project-{{ forloop.counter }}' >
+                    <div class='project-title'>
+                        {{ project.name }}
+                    </div>
+                    <div class='project-info'>
+                        <div class='info-desc'>
+                            {{ project.short_desc }}
+                        </div>
+                        <div class='info-tech'>
+                            <b>Tech:</b> {{ project.tech_used }}
+                        </div>
+                        <div class='info-link-container'>
+                            {% if project.live_link %}
+                            <a href='{{ project.live_link }}' class='info-link' target='_blank'>Live</a>
+                            {% endif %}
+                            {% if project.git_link %}
+                            <a href='{{ project.git_link }}' class='info-link' target='_blank'>Github</a>
+                            {% endif %}
+                            <a href='javascript:void(0);' class='info-link project-more-info'>More Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='project-details row col-md-9 col-sm-9'>
+                <div class='triangle-down'></div>
+                <div class='project-long-info'>
+                    {{ project.long_desc }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{% extends 'urlshortener/short_base.html' %}
+
+{%block body %}
+<div class='content-container'>
+    <div class="content">
+    <div><div id="title">boff.io</div><div id="title-extension"></div></div>
+    <form action="{% url 'short:create' %}" id="short_form" method="post">
+        {% csrf_token %}
+        <!--<label for="long_url">URL to shorten:</label>-->
+        <input type="text" class="short_input" name="long_url" id="long_url" placeholder="URL to shorten" />
+        <!--<label for="short_url">Short Name:</label>-->
+        <input type="text" class="short_input" name="short_url" id="short_url" placeholder="Custom Name" />
+        <input type="submit" value="Submit" id="short_submit" />
+    </form>
+</div>
+{% endblock %}

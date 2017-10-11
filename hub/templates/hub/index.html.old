@@ -1,0 +1,46 @@
+{% extends 'hub/hub_base.html' %}
+{% load staticfiles %}
+
+{% block more_header %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'hub/css/index.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'global/css/jquery.fullPage.css' %}" />
+<script type="text/javascript" src="{% static 'global/js/jquery.fullPage.min.js' %}"></script>
+{% endblock %}
+
+{% block logo %}
+<a href="#intro" id="logo">MWA</a>
+{% endblock %}
+
+{% block body %}
+<div id='fullpage'>
+    <div class='section' id='section-intro' data-anchor='intro'>
+        <a href='#about' id='intro-text'>Hi! I'm Michael</a>
+        <p>I love making complicated things simple.</p>
+    </div>
+    <div class='section' id='section-about' data-anchor='about'>
+        <div class='content-container'>
+            <div class='content'>
+                <p>I am a web developer and IT supervisor.</p>
+                <p>I am also a flutist, swimmer, and professional geek.</p>
+                <p>I love making complicated tech simpler and easier to fit into my client's lives.</p>
+            </div>
+        </div>
+    </div>
+    <!--<div class='section' id='section-portfolio' data-anchor='portfolio'>
+        {% include 'hub/portfolio.html' with projects=portfolio %}
+    </div>
+-->
+    {% include 'hub/portfolio_entry.html' with projects=portfolio %}
+
+    <div class='section fp-auto-height' id='section-contact' data-anchor='contact'>
+        <div class='content-container'>
+            <div class='content'>
+                <p>I am a web developer and IT supervisor.</p>
+                <p>I am also a flutist, swimmer, and professional geek.</p>
+                <p>I love making complicated tech simpler and easier to fit into my client's lives.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

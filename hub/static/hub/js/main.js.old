@@ -1,0 +1,91 @@
+$(function() {
+
+    var modifyHeaderOnScroll = function(section_index) {
+        var header_colors = new Object();
+
+        header_colors[1] = "#131313";
+        header_colors[2] = "#131313";
+        header_colors[3] = "#E3E3E3";
+
+        $('#logo').css('color', header_colors[section_index]);
+        $('.boff-link').css('color', header_colors[section_index]);
+
+    }
+
+    var expandProject = function(event) {
+        console.log(event);
+
+        // Reset projects previously selected.
+        $('.project').each(function(count, elem) {
+            var $proj = $(elem);
+            $proj.css('width', '350px');
+            $proj.css('height', '200px');
+        });
+
+        var $selected = $(event.target);
+
+        if($selected.attr('class') != "project") {
+            $selected = $selected.parent();
+        }
+        $selected.css('width', '100%');
+        $selected.css('height', '300px');
+    }
+
+    var alternatePortfolioAlignment = function() {
+        $('.project-container-2').each(function(count, elem){
+            var $elem = $(elem);
+            var elem_height = $elem.height();
+            var elem_width = $elem.width();
+            if(count % 2 == 1) {
+                $elem.css('float', 'right')
+                $elem.css('justify-content', 'flex-end');
+
+                $elem.find('.project-title-2').css('text-align', 'right');
+                $elem.find('.info-link-container').css('float', 'right');
+            }
+            //$elem.css('background-size', '25% auto');
+        });
+
+        $('.project-sections').each(function(count, elem){
+            var $elem = $(elem);
+            var elem_height = $elem.height();
+            var elem_width = $elem.width()
+            console.log($elem.css('background-image'));
+            if($elem.css('background-image') != 'none'){
+                if(count % 2 == 1) {
+                    $elem.css('background-position', 'left');
+                    $elem.find('.project-container-gradient').css('background-image', 'linear-gradient(to right, transparent 1%, rgb(23, 23, 23), rgb(23, 23, 23), rgb(23, 23, 23))');
+
+                }
+                else {
+                    $elem.find('.project-container-gradient').css('background-image', 'linear-gradient(to left, transparent 1%, rgb(23, 23, 23), rgb(23, 23, 23), rgb(23, 23, 23))');
+                }
+                $elem.css('background-size', 'auto '+elem_height+'px');
+            }
+            //$elem.css('background-size', 'contain');
+
+        });
+    }
+
+    var main = function() {
+        // Start fullpage.js
+        $('#fullpage').fullpage({
+            autoScrolling: false,
+            fitToSection: false,
+
+            afterLoad: function(anchorLink, index) {
+                modifyHeaderOnScroll(index);
+            }
+        });
+
+        // Hijack clicking on projects in the portfolio
+        $('.project').on('click', expandProject);
+        
+
+        $(document).ready(function() {
+            alternatePortfolioAlignment();
+        });
+    }
+
+    main();
+})

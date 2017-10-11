@@ -1,0 +1,37 @@
+{% extends 'hub/hub_base.html' %}
+{% load staticfiles %}
+
+{% block more_header %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'hub/css/index.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'global/css/jquery.fullPage.css' %}" />
+<script type="text/javascript" src="{% static 'global/js/jquery.fullPage.min.js' %}"></script>
+{% endblock %}
+
+{% block logo %}
+<a href="#intro" id="logo">MWA</a>
+{% endblock %}
+
+{% block body %}
+<div id='fullpage'>
+    <div class='section' id='section-intro' data-anchor='intro'>
+        <div id='intro-text'>Hi! I'm Michael</div>
+        <div class='intro-about'>I love making this crazy world just a little bit easier, one project at a time.</div>
+        <div class='contact-container'>
+            <a href='mailto:mwaboff@gmail.com' class='contact-link .contact-ico' title='Mail me!'>
+                <i class="fa fa-envelope"></i>
+            </a>
+            <a href='http://www.linkedin.com/mwaboff' class='contact-link .contact-ico' title='Linkin'>
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href='http://www.github.com/mwaboff' class='contact-link .contact-ico' title='Github'>
+                <i class="fa fa-github"></i>
+            </a>
+            <a href='http://resume.com' class='contact-link .contact-txt' title='Resume'>
+                <i class="fa fa-file-pdf-o"></i>
+            </a>
+        </div>
+    </div>
+    {% include 'hub/portfolio_entry.html' with projects=portfolio %}
+</div>
+{% endblock %}

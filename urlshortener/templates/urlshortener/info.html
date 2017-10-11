@@ -1,0 +1,9 @@
+{% extends 'urlshortener/short_base.html' %}
+
+{% block content-container %}
+<h1>Info about Shortened URL: {{ short_addr }}</h1>
+
+<b>Long URL:</b> {{ long_url }}<br />
+<b>Views:</b> {{ views }}<br />
+<b>Created:</b> {{ create_date }} (America/New_York)
+{% endblock %}

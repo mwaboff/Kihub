@@ -1,0 +1,41 @@
+{% for project in projects %}
+<div 
+    class='section fp-auto-height project-sections' 
+    {% if forloop.counter == 1 %}
+    data-anchor="portfolio2" 
+    {% else %}
+    data-anchor="portfolio-{{ project.name }}" 
+    {% endif %}
+
+    {% if project.img_link %}
+    style='background-image: url("{{ project.img_link }}"); background-repeat: no-repeat; background-position: right'
+    {% endif %}
+    >
+    <div class='project-container-gradient'>
+        <div class='project-container-2' id='project-{{ forloop.counter }}' >
+            <div class='project-content-2'>
+                <div class='project-title-2'>
+                    {{ project.name }}
+                </div>
+                <div class='project-info-2'>
+                    <div class='info-desc-2'>
+                        {{ project.long_desc }}
+                    </div>
+                    <div class='project-img-2'></div>
+                    <div class='info-tech-2'>
+                        <b>Tech:</b> {{ project.tech_used }}
+                    </div>
+                    <div class='info-link-container'>
+                        {% if project.live_link %}
+                        <a href='{{ project.live_link }}' class='info-link' target='_blank'>Live</a>
+                        {% endif %}
+                        {% if project.git_link %}
+                        <a href='{{ project.git_link }}' class='info-link' target='_blank'>Github</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

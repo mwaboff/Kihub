@@ -1,0 +1,9 @@
+{% extends 'global_base.html' %}
+{% load staticfiles %}
+
+{% block more_header %}
+<link rel="stylesheet" type="text/css" href="{% static 'urlshortener/css/short_app.css' %}" />
+<script type="text/javascript" src="{% static 'urlshortener/js/main.js' %}"></script>
+{% endblock %}
+
+{% block title %}boff.io - The boffiest URL shortener{% endblock %}
